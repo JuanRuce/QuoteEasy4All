@@ -1,14 +1,40 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>QuoteEasy4All</title>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+       <f:view>
+            <p:panel id="panel1" styleClass="Operation Calc" >
+                <h:form id="frmTable" rendered="true" onsubmit="return false;" >
+                    <br></br>
+                    <br></br>
+                    
+                    <h2>[ Quote Calculate Page ]</h2>
+                    <br></br>
+                    <br></br>
+                    <p>Operador Uno | Operqador | Operador Dos |  Resultado</p>
+                    <br></br>
+                    <p:inputText label="Operador uno" value = "#{quoteEntity.operadorUno}" maxlength="15"/>
+                    <p:inputText label="Operation" value="#{quoteEntity.typeOperation}" maxlength="10"/>
+                    <p:inputText label="Operador dos" value = "#{quoteEntity.operadorDos}" maxlength="15"/>
+                    <p:outputLabel value=" = " />
+                    <p:inputText id="result" label="Resultado" disabled="true" value="#{quoteEntity.resultCalc}" maxlength="15">
+                        <p:ajax update="result" /> 
+                    </p:inputText>    
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <p:commandButton value="Enviar" action="#{quoteEntity.executeOperation()}" update=":frmTable:result" rendered="true">
+                        <p:ajax update="result" /> 
+                    </p:commandButton>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                </h:form>
+            </p:panel>    
+       </f:view>
     </h:body>
 </html>
 

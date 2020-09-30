@@ -11,8 +11,20 @@ package com.tech.jarc.quoteeasy4all.calc;
  */
 public class Aritmetic {
     
-    public double Plus(double v1, double v2){
-        System.out.println("The Plus is: "+(v1+v2));
-        return (v1+v2);
+    public double opration (String typeOper, double v1, double v2){
+        double result = 0;
+        
+        switch(typeOper){
+            
+            case "Plus":
+               result = v1 + v2;
+                
+            break;
+            case "Menus":
+                result = v1 - v2;
+            break;    
+            
+        }
+        return result;
     }
 }

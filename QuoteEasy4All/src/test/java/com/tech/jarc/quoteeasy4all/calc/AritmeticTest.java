@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
@@ -37,18 +38,18 @@ public class AritmeticTest {
     }
 
     /**
-     * Test of Plus method, of class Aritmetic.
+     * Test of opration method, of class Aritmetic.
      */
-    @org.junit.Test
-    public void testPlus() {
-        System.out.println("Plus");
-        double v1 = 4.5;
-        double v2 = 3.2;
+    @Test
+    public void testOpration() {
+        System.out.println("opration");
+        String typeOper = "Plus";
+        double v1 = 3.4;
+        double v2 = 2.2;
         Aritmetic instance = new Aritmetic();
-        double expResult = 7.7;
-        double result = instance.Plus(v1, v2);
+        double expResult = 5.6;
+        double result = instance.opration(typeOper, v1, v2);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
         if (result != expResult){
          fail("The test case is a prototype.");
         }
