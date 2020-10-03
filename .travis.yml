@@ -1,4 +1,4 @@
 language: java
-script: mvn package
+script: mvn compile war:war
 notifications:
 email: ja.ruiz.ceniceros@gmail.com
